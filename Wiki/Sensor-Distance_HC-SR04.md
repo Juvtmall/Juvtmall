@@ -3,21 +3,24 @@
 This HC-SR04 Ultrasonic Ranging Sensor is a non-contact distance measurement module with stable performance and high ranging accuracy, besides, the measure angle is 45°, For the advantage compared to the ultraviolent ranging sensor, the price of this module is surely to be expensive, in order to make the great use of the resource, we suggest you to use this sensor when the measurement range is up to 5 meter.
 
 Look at the picture, there are two sensors, one is emit the ultrasonic and the other receive it when the ultrasonic is reflect by the obstacle, there are also two pins for emission and receiving the data from controller.
-Features
 
-Power supply: 5V DC.
+##   Features
 
-Effectual angle: <15°.
+Power supply: 5V DC
 
-Ranging distance: 2cm to 500 cm.
+Effectual angle: <15°
 
-Resolution: 1 cm.
+Ranging distance: 2cm to 500 cm
 
-Ultrasonic Frequency: 40k Hz.
+Resolution: 1 cm
+
+Ultrasonic Frequency: 40k Hz
+
 Note: the size of the object is better to be more than 0.5 m2, the surface is as possible as smooth, or it will influence the accuracy of measure data.
 
 
-usage
+##   usage
+
 The principle of the HC-SR04: it transmits a short ultrasonic pulse, receive the signal which reflected by the object, and converts it into a electric signal.
 Here’s the sequence chart:
  First, we transmit a trig signal which is high lever signal at least 10 μs to the HC-SR04, then it transmits 8 square waves at the frequency of 40 kHz in cycle, it will detect if there’s the return signal by itself, when the square waves reflected by the object, HC-SR04 transmit a high lever signal, the time of the high lever is proportional to the distance, therefore, it’s easy to get the distance by account the high lever’s time and then divide it by 58. How do I get this  
