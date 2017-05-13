@@ -1,4 +1,6 @@
 Introduction＜/br＞
+
+
 This HC-SR04 Ultrasonic Ranging Sensor is a non-contact distance measurement module with stable performance and high ranging accuracy, besides, the measure angle is 45°, For the advantage compared to the ultraviolent ranging sensor, the price of this module is surely to be expensive, in order to make the great use of the resource, we suggest you to use this sensor when the measurement range is up to 5 meter. ＜/br＞
 Look at the picture, there are two sensors, one is emit the ultrasonic and the other receive it when the ultrasonic is reflect by the obstacle, there are also two pins for emission and receiving the data from controller.
 Features＜/br＞
