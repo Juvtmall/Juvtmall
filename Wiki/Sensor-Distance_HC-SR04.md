@@ -57,7 +57,8 @@ void loop() {
     starts timing, then waits for the pin to go LOW and stops timing. Returns 
     the length of the pulse in microseconds. Gives up and returns 0 if no pulse 
     starts within a specified time out.
-  */
+ 
+ */
 
 // put your main code here, to run repeatedly:
 
