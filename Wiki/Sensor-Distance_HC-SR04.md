@@ -84,3 +84,33 @@ Serial.println(distance); //display the distance
 }
 
 [/code]
+
+<font color="#5e6d03">#define</font> <font color="#000000">ECHO</font> <font color="#000000">2</font>
+<font color="#5e6d03">#define</font> <font color="#000000">TRIG</font> <font color="#000000">3</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#434f54">&#47;&#47; put your setup code here, to run once:</font>
+<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">ECHO</font><font color="#434f54">,</font> <font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">TRIG</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
+<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">9600</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#000000">}</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font> <font color="#000000">{</font>
+ &nbsp;<font color="#95a5a6">&#47;*</font>
+<font color="#95a5a6"> &nbsp;&nbsp;* Here&#39;s the pulseIn function: Reads a pulse (either HIGH or LOW) on a pin. </font>
+<font color="#95a5a6"> &nbsp;&nbsp;&nbsp;For example, if value is HIGH, pulseIn() waits for the pin to go HIGH, </font>
+<font color="#95a5a6"> &nbsp;&nbsp;&nbsp;starts timing, then waits for the pin to go LOW and stops timing. Returns </font>
+<font color="#95a5a6"> &nbsp;&nbsp;&nbsp;the length of the pulse in microseconds. Gives up and returns 0 if no pulse </font>
+<font color="#95a5a6"> &nbsp;&nbsp;&nbsp;starts within a specified time out.</font>
+<font color="#95a5a6"> &nbsp;*&#47;</font>
+ &nbsp;&nbsp;<font color="#434f54">&#47;&#47; put your main code here, to run repeatedly:</font>
+<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">TRIG</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;<font color="#434f54">&#47;&#47;give a low lever signal to the trig pin of HC-SR04</font>
+<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;delay 2μs</font>
+<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">TRIG</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;<font color="#434f54">&#47;&#47;write a high lever signal to the trig pin of HC-SR04</font>
+<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;delay 10μs</font>
+<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">TRIG</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;<font color="#434f54">&#47;&#47;write a low lever signal to the trig pin of HC-SR04 </font>
+<font color="#00979c">float</font> <font color="#000000">Time</font><font color="#434f54">=</font><font color="#d35400">pulseIn</font><font color="#000000">(</font><font color="#000000">ECHO</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;<font color="#434f54">&#47;&#47;time the high lever signal&#39;s time, also means </font>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47; &nbsp;the time cost by double distance</font>
+<font color="#00979c">float</font> <font color="#000000">distance</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font color="#000000">distance</font><font color="#434f54">=</font> <font color="#000000">Time</font><font color="#434f54">&#47;</font><font color="#000000">58</font><font color="#000000">;</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;calculate the distance</font>
+<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">distance</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;display the distance</font>
+<font color="#000000">}</font>
